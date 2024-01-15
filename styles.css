@@ -1,0 +1,115 @@
+.liver-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.healthy-liver {
+    background-color: darkred;
+}
+
+.molecule-ammonia {
+    background-color: yellow;
+}
+
+.molecule-medicine {
+    background-color: plum;
+}
+
+.add-molecule-button {
+    position: fixed;
+    height: 200px;
+    width: 200px;
+    background-color: rgba(200, 200, 200, 0.2);
+    border: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+.add-molecule-button:hover {
+    scale: 1.05;
+}
+
+.left-button {
+    bottom: 0;
+    left: 0;
+    border-top-right-radius: 50%;
+}
+
+.right-button {
+    bottom: 0;
+    right: 0;
+    border-top-left-radius: 50%;
+}
+
+.flying-molecule {
+    z-index: 1;
+    position: fixed;
+    animation-timing-function: cubic-bezier(.18,1.02,.74,.96);
+    animation-duration: 2s;
+    animation-play-state: running;
+    transform: translate(-50%, 50%);
+}
+
+.flying-molecule-ammonia {
+    animation-name: flying-molecule-ammonia;
+}
+
+.flying-molecule-medicine {
+    animation-name: flying-molecule-medicine;
+}
+
+@keyframes flying-molecule-ammonia {
+    0% {
+        bottom: calc(0% + 100px);
+        left: calc(0% + 100px);
+        opacity: 1;
+        scale: 1;
+        transform: rotate(0deg);
+    }
+
+    75% {
+        opacity: 1;
+        scale: 0.3;
+        transform: rotate(270deg);
+    }
+
+    100% {
+        bottom:  calc(50% - 33px - 16px);
+        left:  calc(50% - 33px - 16px);
+        opacity: 0;
+        scale: 0.1;
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes flying-molecule-medicine {
+    0% {
+        bottom: calc(0% + 100px);
+        right: calc(0% + 100px);
+        opacity: 1;
+        scale: 1;
+        transform: rotate(0deg);
+    }
+
+    75% {
+        opacity: 1;
+        scale: 0.3;
+        transform: rotate(270deg);
+    }
+
+    100% {
+        bottom:  calc(50% - 33px - 16px);
+        right:  calc(50% - 33px - 16px);
+        opacity: 0;
+        scale: 0.1;
+        transform: rotate(360deg);
+    }
+}
