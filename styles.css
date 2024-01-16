@@ -1,3 +1,8 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
 .liver-container {
     position: fixed;
     top: 0;
@@ -112,4 +117,80 @@
         scale: 0.1;
         transform: rotate(360deg);
     }
+}
+
+.liver-cancer {
+    z-index: 20;
+    position: fixed;
+    background-color: burlywood;
+    top: 50%;
+    right: 50%;
+    opacity: 1;
+    border-radius: 0;
+    height: max(100vh, 100vw);
+    width: max(100vh, 100vw);
+    transform: translate(50%, -50%);
+    animation-timing-function: ease;
+    animation-duration: 2s;
+    animation-play-state: running;
+    animation-name: liver-cancer-animation;
+}
+
+@keyframes liver-cancer-animation {
+    0% {
+        opacity: 0;
+        height: 0;
+        width: 0;
+        border-radius: 50%;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    50% {
+        border-radius: 50%;
+    }
+
+    75% {
+        opacity: 1;
+        height: max(100vh, 100vw);
+        width: max(100vh, 100vw);
+        border-radius: 0;
+    }
+
+    100% {
+        opacity: 1;
+        height: max(100vh, 100vw);
+        width: max(100vh, 100vw);
+        border-radius: 0;
+    }
+}
+
+
+.liver-cancer-out-animation {
+    animation-timing-function: ease;
+    animation-duration: 1s;
+    animation-play-state: running;
+    opacity: 1;
+    animation-name: liver-cancer-out-animation;
+}
+
+@keyframes liver-cancer-out-animation {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.liver-with-cancer {
+    z-index: 2;
+    background-color: chocolate;
+    position: absolute;
+    transform: translate(50%, -50%);
+    top: 50%;
+    right: 50%;
 }
